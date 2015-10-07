@@ -4,21 +4,24 @@ var webpack = require('webpack'),
 
 exports.context = __dirname + '/src';
 
-if(!IS_BUILD) {
-    exports.contentBase = "http://localhost:3000/";
-}
-
 exports.entry = {
+    // Execute wether the app is being built or 
+    // being server from hot dev server.
     'app': IS_BUILD? './index.js' : ['webpack/hot/dev-server', './index.js']
 };
 
-exports.output = {
-    path: __dirname + '/dist',
-    filename: '[name].min.js'
-};
 
 if(!IS_BUILD) {
-    exports.output.publicPath = 'http://localhost:9080/assets/';
+    // This only in case you have an external 
+    // server that runs on port 3000 on localhost.
+    exports.contentBase = "http://localhost:3000/";
+
+    exports.output = {
+        path: __dirname + '/dist',
+        filename: '[name].min.js'
+    };
+
+    exports.output.publicPath = 'http://localhost:9080/';
 }
 
 exports.resolve = {
