@@ -4,13 +4,6 @@
   "description": "A ToDo small app to show how angular and webpack get together.",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run watch &",
-    "start": "node .",
-    "watch": "npm run clean && webpack --progress && webpack-dev-server --hot --inline --port 9080",
-    "postinstall": "npm run build",
-    "clean": "mkdir -p dist && rm -Rf dist/*",
-    "prebuild": "npm run clean",
-    "build": "IS_BUILD=true webpack --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
