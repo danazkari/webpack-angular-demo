@@ -1,0 +1,6 @@
+todo-item {
+    display: block;
+    &.done {
+        text-decoration: line-through;
+    }
+}
